@@ -44,6 +44,7 @@
 		watchdog0 = &wdt010;
 		mcuboot-button0 = &button0;
 		mcuboot-led0 = &led0;
+		rtt-custom-section = &cpuapp_tcm_region;
 	};
 
 	buttons {
@@ -219,9 +220,10 @@ slot3_partition: &cpurad_slot1_partition {
 	memory-regions = <&cpuapp_dma_region>;
 };
 
+/* Leave one channel for CPURAD */
 &gpiote130 {
 	status = "okay";
-	owned-channels = <0 1 2 3 4 5 6 7>;
+	owned-channels = <0 1 2 3 4 5 6>;
 };
 
 &gpio0 {
@@ -319,6 +321,14 @@ zephyr_udc0: &usbhs {
 	status = "okay";
 	pinctrl-0 = <&can120_default>;
 	pinctrl-names = "default";
+};
+
+&hfxo {
+	status = "okay";
+};
+
+&lfxo {
+	status = "okay";
 };
 
 &pwm130 {

@@ -107,6 +107,7 @@ beagle	BeagleBoard.org Foundation
 bflb	Bouffalo Lab (Nanjing) Co., Ltd.
 bhf	Beckhoff Automation GmbH & Co. KG
 bitmain	Bitmain Technologies
+blackberry	BlackBerry Limited
 blues	Blues Wireless
 blutek	BluTek Power
 boe	BOE Technology Group Co., Ltd.
@@ -166,6 +167,7 @@ csq	Shenzen Chuangsiqi Technology Co.,Ltd.
 ct	CTHINGS.CO
 cubietech	Cubietech, Ltd.
 cypress	Cypress Semiconductor Corporation
+cytron	Cytron Technologies
 cznic	CZ.NIC, z.s.p.o.
 dallas	Maxim Integrated Products (formerly Dallas Semiconductor)
 dataimage	DataImage, Inc.
@@ -252,6 +254,7 @@ fintek	Feature Integration Technology Inc.
 firefly	Firefly
 fobe	FoBE Studio
 focaltech	FocalTech Systems Co.,Ltd
+framework	Framework Computer, Inc.
 franzininho	Franzininho
 frida	Shenzhen Frida LCD Co., Ltd.
 friendlyarm	Guangzhou FriendlyARM Computer Tech Co., Ltd
@@ -738,6 +741,7 @@ variscite	Variscite Ltd.
 vcc-gnd	VCC-GND Studio
 vdl	Van der Laan b.v.
 via	VIA Technologies, Inc.
+vicharak	Vicharak
 videostrong	Videostrong Technology Co., Ltd.
 virtio	Virtual I/O Device Specification, developed by the OASIS consortium
 virtual	Used for virtual device without specific vendor.

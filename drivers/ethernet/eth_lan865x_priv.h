@@ -33,6 +33,7 @@
 #define LAN865x_MAC_HRB          MMS_REG(0x1, 0x020)
 #define LAN865x_MAC_HRT          MMS_REG(0x1, 0x021)
 #define LAN865x_MAC_SAB1         MMS_REG(0x1, 0x022)
+#define LAN865x_MAC_SAT1         MMS_REG(0x1, 0x023)
 #define LAN865x_MAC_SAB2         MMS_REG(0x1, 0x024)
 #define LAN865x_MAC_SAT2         MMS_REG(0x1, 0x025)
 /* LAN8650/1 configuration fixup from AN1760 */
@@ -50,7 +51,6 @@ struct lan865x_config {
 	struct spi_dt_spec spi;
 	struct gpio_dt_spec interrupt;
 	struct gpio_dt_spec reset;
-	int32_t timeout;
 	struct net_eth_mac_config mac_cfg;
 
 	/* MAC */

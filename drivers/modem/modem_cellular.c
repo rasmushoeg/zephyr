@@ -17,7 +17,6 @@
 #include <zephyr/modem/backend/uart.h>
 #include <zephyr/net/ppp.h>
 #include <zephyr/pm/device.h>
-#include <zephyr/pm/device.h>
 #include <zephyr/pm/device_runtime.h>
 #include <zephyr/sys/atomic.h>
 
@@ -3032,7 +3031,7 @@ MODEM_CHAT_SCRIPT_DEFINE(sqn_gm02s_periodic_chat_script,
 #endif
 
 #define MODEM_CELLULAR_INST_NAME(name, inst) \
-	_CONCAT_4(name, _, DT_DRV_COMPAT, inst)
+	CONCAT(name, _, DT_DRV_COMPAT, inst)
 
 #define MODEM_CELLULAR_DEFINE_USER_PIPE_DATA(inst, name, size)                                     \
 	MODEM_PIPELINK_DT_INST_DEFINE(inst, name);                                                 \

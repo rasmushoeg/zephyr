@@ -475,10 +475,11 @@
 			compatible = "nxp,flexcan-fd", "nxp,flexcan";
 			reg = <0x40304000 0x4000>;
 			clocks = <&clock NXP_S32_FLEXCANA_CLK>;
-			clk-source = <0>;
 			interrupts = <109 0>, <110 0>, <111 0>, <112 0>;
 			interrupt-names = "ored", "ored_0_31_mb",
 					  "ored_32_63_mb", "ored_64_95_mb";
+			number-of-mb = <96>;
+			number-of-mb-fd = <21>;
 			status = "disabled";
 		};
 
@@ -486,9 +487,10 @@
 			compatible = "nxp,flexcan-fd", "nxp,flexcan";
 			reg = <0x40308000 0x4000>;
 			clocks = <&clock NXP_S32_FLEXCANA_CLK>;
-			clk-source = <0>;
 			interrupts = <113 0>, <114 0>, <115 0>;
 			interrupt-names = "ored", "ored_0_31_mb", "ored_32_63_mb";
+			number-of-mb = <64>;
+			number-of-mb-fd = <14>;
 			status = "disabled";
 		};
 
@@ -496,9 +498,10 @@
 			compatible = "nxp,flexcan-fd", "nxp,flexcan";
 			reg = <0x4030c000 0x4000>;
 			clocks = <&clock NXP_S32_FLEXCANA_CLK>;
-			clk-source = <0>;
 			interrupts = <116 0>, <117 0>, <118 0>;
 			interrupt-names = "ored", "ored_0_31_mb", "ored_32_63_mb";
+			number-of-mb = <64>;
+			number-of-mb-fd = <14>;
 			status = "disabled";
 		};
 
@@ -506,9 +509,10 @@
 			compatible = "nxp,flexcan-fd", "nxp,flexcan";
 			reg = <0x40310000 0x4000>;
 			clocks = <&clock NXP_S32_FLEXCANB_CLK>;
-			clk-source = <0>;
 			interrupts = <119 0>, <120 0>;
 			interrupt-names = "ored", "ored_0_31_mb";
+			number-of-mb = <32>;
+			number-of-mb-fd = <7>;
 			status = "disabled";
 		};
 
@@ -516,9 +520,10 @@
 			compatible = "nxp,flexcan-fd", "nxp,flexcan";
 			reg = <0x40314000 0x4000>;
 			clocks = <&clock NXP_S32_FLEXCANB_CLK>;
-			clk-source = <0>;
 			interrupts = <121 0>, <122 0>;
 			interrupt-names = "ored", "ored_0_31_mb";
+			number-of-mb = <32>;
+			number-of-mb-fd = <7>;
 			status = "disabled";
 		};
 
@@ -526,9 +531,10 @@
 			compatible = "nxp,flexcan-fd", "nxp,flexcan";
 			reg = <0x40318000 0x4000>;
 			clocks = <&clock NXP_S32_FLEXCANB_CLK>;
-			clk-source = <0>;
 			interrupts = <123 0>, <124 0>;
 			interrupt-names = "ored", "ored_0_31_mb";
+			number-of-mb = <32>;
+			number-of-mb-fd = <7>;
 			status = "disabled";
 		};
 
@@ -892,6 +898,7 @@
 		mc_me: mc_me@402dc000 {
 			compatible = "nxp,s32-mc-me";
 			reg = <0x402dc000 0x4000>;
+			software-reset-supported;
 		};
 
 		mc_rgm: mc_rgm@4028c000 {

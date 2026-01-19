@@ -98,6 +98,11 @@ static int mcux_lpc_syscon_clock_control_on(const struct device *dev,
 	case MCUX_FLEXCAN0_CLK:
 		CLOCK_EnableClock(kCLOCK_GateFLEXCAN0);
 		break;
+#if (defined(FSL_FEATURE_SOC_FLEXCAN_COUNT) && (FSL_FEATURE_SOC_FLEXCAN_COUNT > 1))
+	case MCUX_FLEXCAN1_CLK:
+		CLOCK_EnableClock(kCLOCK_GateFLEXCAN1);
+		break;
+#endif /* defined(FSL_FEATURE_SOC_FLEXCAN_COUNT) */
 #else
 	case MCUX_FLEXCAN0_CLK:
 		CLOCK_EnableClock(kCLOCK_Flexcan0);
@@ -219,6 +224,39 @@ static int mcux_lpc_syscon_clock_control_on(const struct device *dev,
 		CLOCK_EnableClock(kCLOCK_GateTRNG0);
 	}
 #endif
+#endif
+
+#if DT_NODE_HAS_STATUS_OKAY(DT_NODELABEL(lpcmp0))
+	if ((uint32_t)sub_system == MCUX_LPCMP0_CLK) {
+#if defined(CONFIG_SOC_FAMILY_MCXA)
+		CLOCK_EnableClock(kCLOCK_GateCMP0);
+#elif defined(CONFIG_SOC_FAMILY_MCXN)
+#else
+		CLOCK_EnableClock(kCLOCK_Lpcmp0);
+#endif
+	}
+#endif
+
+#if DT_NODE_HAS_STATUS_OKAY(DT_NODELABEL(lpcmp1))
+	if ((uint32_t)sub_system == MCUX_LPCMP1_CLK) {
+#if defined(CONFIG_SOC_FAMILY_MCXA)
+		CLOCK_EnableClock(kCLOCK_GateCMP1);
+#elif defined(CONFIG_SOC_FAMILY_MCXN)
+#else
+		CLOCK_EnableClock(kCLOCK_Lpcmp1);
+#endif
+	}
+#endif
+
+#if DT_NODE_HAS_STATUS_OKAY(DT_NODELABEL(lpcmp2))
+	if ((uint32_t)sub_system == MCUX_LPCMP2_CLK) {
+#if defined(CONFIG_SOC_FAMILY_MCXA)
+		CLOCK_EnableClock(kCLOCK_GateCMP2);
+#elif defined(CONFIG_SOC_FAMILY_MCXN)
+#else
+		CLOCK_EnableClock(kCLOCK_Lpcmp2);
+#endif
+	}
 #endif
 
 	return 0;
@@ -571,7 +609,8 @@ static int mcux_lpc_syscon_clock_control_get_subsys_rate(const struct device *de
 #endif /* CONFIG_ADC_MCUX_LPADC */
 
 #if defined(CONFIG_CAN_MCUX_FLEXCAN)
-#if defined(CONFIG_SOC_FAMILY_MCXA)
+#if (defined(FSL_FEATURE_SOC_FLEXCAN_COUNT) && (FSL_FEATURE_SOC_FLEXCAN_COUNT == 1) && \
+	!defined(CONFIG_SOC_MCXA346))
 	case MCUX_FLEXCAN0_CLK:
 		*rate = CLOCK_GetFlexcanClkFreq();
 		break;
@@ -582,7 +621,7 @@ static int mcux_lpc_syscon_clock_control_get_subsys_rate(const struct device *de
 	case MCUX_FLEXCAN1_CLK:
 		*rate = CLOCK_GetFlexcanClkFreq(1);
 		break;
-#endif /* defined(CONFIG_SOC_FAMILY_MCXA) */
+#endif /* defined(FSL_FEATURE_SOC_FLEXCAN_COUNT) */
 #endif /* defined(CONFIG_CAN_MCUX_FLEXCAN) */
 
 #if defined(CONFIG_MCUX_FLEXIO)
