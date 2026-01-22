@@ -1326,6 +1326,7 @@ Documentation Infrastructure:
     - boards/shields/canis_canpico/
     - boards/shields/mcp2515/
     - boards/shields/mikroe_can_fd_6_click/
+    - boards/shields/mikroe_mcp251xfd_click/
     - boards/shields/tcan4550evm/
     - doc/connectivity/canbus/
     - doc/hardware/peripherals/can/
@@ -2229,6 +2230,7 @@ Documentation Infrastructure:
   collaborators:
     - anangl
     - henrikbrixandersen
+    - FelixWang47831
   files:
     - drivers/pwm/
     - dts/bindings/pwm/
@@ -3406,11 +3408,14 @@ Microchip RISC-V Platforms:
   collaborators:
     - kgugala
     - tgorochowik
+    - con-pax
   files:
     - boards/microchip/m2gl025_miv/
     - boards/microchip/mpfs_icicle/
+    - boards/microchip/pic64gx_curiosity_kit/
     - dts/riscv/microchip/
     - soc/microchip/miv/
+    - soc/microchip/pic64/
   labels:
     - "platform: Microchip RISC-V"
 
@@ -4251,6 +4256,7 @@ PMCI:
   collaborators:
     - nashif
     - kehintel
+    - edersondisouza
   files:
     - subsys/pmci/
     - samples/subsys/pmci/
@@ -4923,6 +4929,17 @@ Silabs SiM3U Platforms:
     - "platform: Silabs SiM3U"
   description: >-
     SiM3U SoCs, dts files, and related drivers. Boards based on SiM3U SoCs.
+
+Space Cubics Platforms:
+  status: maintained
+  maintainers:
+    - yashi
+  files:
+    - boards/sc/
+  labels:
+    - "platform: Space Cubics"
+  description: >-
+    Space Cubics on-board computers (OBCs).
 
 State machine framework:
   status: maintained
